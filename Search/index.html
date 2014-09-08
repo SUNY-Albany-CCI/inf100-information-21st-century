@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+function FindAndDisplay()
+{
+    var out = "";
+    var i;
+    for(i = 0; i<arr.length; i++)
+    {
+    	if (arr[i].FirstName.valueOf().toLowerCase()+"" === document.getElementById('firstName').value.toLowerCase()+""
+    	 && arr[i].LastName.valueOf().toLowerCase()+"" === document.getElementById('lastName').value.toLowerCase()+""
+    	 && arr[i].Username.valueOf().toLowerCase()+"" === document.getElementById('netID').value.toLowerCase()+"")
+    	{
+    		out += '<a href="' + arr[i].Username + '">' +
+			arr[i].Country + '</a><br>';
+			document.getElementById("id01").innerHTML = out;
+			document.getElementById("CountryOutput").value = arr[i].Country;
+			document.getElementById("GmailOutput").value = arr[i].Gmail;
+			return;
+    	}
+    }
+    out += 'Could Not Find Your Information - Please Check that Your First Name, Last Name and NetID is Correct';
+	document.getElementById("id01").innerHTML = out;
+
+}
+
+function onSubmit(event)
+{
+	FindAndDisplay();
+}
+</script>
+
+<form name="input" action="JavaScript:onSubmit()" method="get">
+First Name: <input type="text" id="firstName"><br/>
+Last Name: <input type="text" id="lastName"><br/>
+NetID: <input type="text" id="netID">
+<br/>
+<input type="submit" value="Submit">
+<br/>
+<br/>
+<h3>Your Assigned Country is:</h3> <input type="text" id="CountryOutput">
+<br/>
+<h3>Your Google Account is:</h3> <input type="text" id="GmailOutput">
+</form>
+<br/>
+<div id="id01"></div>
+
+</body>
+
+<script src="class.js"></script>
+
+</html>

@@ -8,6 +8,7 @@
 function FindAndDisplay()
 {
     var out = "";
+    document.getElementById("id01").innerHTML = out;
     var i;
     for(i = 0; i<arr.length; i++)
     {
@@ -17,13 +18,12 @@ function FindAndDisplay()
     	{
     		out += '<a href="' + arr[i].Username + '">' +
 			arr[i].Country + '</a><br>';
-			document.getElementById("id01").innerHTML = out;
 			document.getElementById("CountryOutput").value = arr[i].Country;
 			document.getElementById("GmailOutput").value = arr[i].Gmail;
 			return;
     	}
     }
-    out += 'Could Not Find Your Information - Please Check that Your First Name, Last Name and NetID is Correct';
+    out = 'Could Not Find Your Information - Please Check that Your First Name, Last Name and NetID is Correct';
 	document.getElementById("id01").innerHTML = out;
 
 }
